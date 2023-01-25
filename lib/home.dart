@@ -40,3 +40,17 @@ class _HomepageState extends State<Homepage> {
     await docUser.set(json);
   }
 }
+
+class User {
+  String id;
+  final String name;
+  final int age;
+  final DateTime birthday;
+
+  User({
+    this.id = '',
+    required this.name,
+    required this.age,
+    required this.birthday,
+  });
+}
