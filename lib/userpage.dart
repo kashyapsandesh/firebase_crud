@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crud/home.dart';
 import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({super.key});
@@ -69,9 +70,8 @@ class _UserPageState extends State<UserPage> {
                     lastDate: DateTime(2101));
                 if (Pickeddate != null) {
                   setState(() {
-                    dateController.text = getDateFormatFromDateFieldPickerMode(
-                            DateTimeFieldPickerMode.date)
-                        .format(Pickeddate);
+                    dateController.text =
+                        DateFormat('yyyy-mm-dd').format(Pickeddate);
                   });
                 }
               },
